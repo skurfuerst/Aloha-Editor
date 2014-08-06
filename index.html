@@ -1,20 +1,50 @@
 <!doctype html>
-
-<html lang="en">
-<head>
-	<title>Aloha Editor</title>
-
-	<meta charset="utf-8">
-	<meta name="description" content="Aloha Editor">
-	<meta name="author" content="Aloha Editor">
-
-	<!-- link rel="stylesheet" href="css/styles.css?v=1.0" -->
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
-<body>
-Aloha!
-</body>
+<html>
+	<head>
+		<title>Aloha Editor</title>
+		<meta charset="UTF-8">
+		<link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
+		<style>
+			body {
+				color: #333;
+				font-family: 'Arbutus Slab', sans-serif; 
+				font-weight: 300;
+				-webkit-font-smoothing: antialiased;
+				   -moz-font-smoothing: antialiased;
+				       -font-smoothing: antialiased;
+			}
+			h1, p { margin: 0 0 0.2em; }
+			.aloha-editable>:first-child { margin-top: 0; }
+			.aloha-editable>:last-child { margin-bottom: 0; }
+			.aloha-caret { outline: 1px solid #000; }
+			.center {
+				position: absolute;
+				display: table;
+				width: 100%;
+				height: 100%;
+				font-size: 2em;
+			}
+			.center>* {
+				width: 100%;
+				height: 100%;
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+			}
+			h1 { font-weight: normal; }
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<div class="aloha-editable">
+				<h1>aloha.</h1>
+			</div>
+		</div>
+		<script src="aloha.min.js"></script>
+		<script>
+			aloha.arrays.coerce(document.querySelectorAll('.aloha-editable')).forEach(aloha);
+			console.log(aloha.markers.hint(aloha.boundaries.fromEndOfNode(document.querySelector('h1'))));
+		</script>
+	</body>
 </html>
+
