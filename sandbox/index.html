@@ -3,6 +3,11 @@
 	<head>
 		<title>Aloha Editor</title>
 		<meta charset="UTF-8">
+
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="handlebars-1.0.0.js"></script>
+		<script src="ember.js"></script>
+
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
 		<!-- Image from: https://www.flickr.com/photos/lovingjazz/6737863743 -->
 		<style>
@@ -57,9 +62,16 @@
 				padding: 0.2em;
 			}
 		</style>
+
+		<script type="text/x-handlebars" data-template-name="index">
+			X{{view App.EditorButton}}A
+		</script>
 	</head>
 	<body>
-		<div class="aloha-editable"><p>one <b>two</b> three</p></div>
+
+		<div id="ember-app">Ember container</div>
+		<script src="embertest.js"></script>
+
 
 		<br/>
 
