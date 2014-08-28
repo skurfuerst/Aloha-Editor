@@ -315,6 +315,7 @@ define([
 
 	exports['formatting'] = new Object();
 	exports['formatting']['format'] = Formatting.format;
+	exports['formatting']['toggle'] = Formatting.toggle;
 
 	exports['events'] = new Object();
 	exports['events']['add']             = Events.add;
